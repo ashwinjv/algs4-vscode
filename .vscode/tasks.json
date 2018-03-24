@@ -1,0 +1,37 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "rm ${workspaceFolder}/bin/${fileBasenameNoExtension}.class && javac -d ${workspaceFolder}/bin -cp ${workspaceFolder}/lib/algs4.jar ${file}",
+            "problemMatcher": [],
+        },
+        {
+            "label": "findbugs",
+            "type": "shell",
+            "command": "findbugs-coursera ${workspaceFolder}/bin/${fileBasenameNoExtension}.class",
+            "problemMatcher": [],
+        },
+        {
+            "label": "pmd",
+            "type": "shell",
+            "command": "pmd-coursera ${file}",
+            "problemMatcher": [],
+        },
+        {
+            "label": "checkstyle",
+            "type": "shell",
+            "command": "checkstyle-coursera ${file}",
+            "problemMatcher": [],
+        },
+        {
+            "label": "clean",
+            "type": "shell",
+            "command": "rm -rf ${workspaceFolder}/bin/*",
+            "problemMatcher": []
+        }
+    ]
+}
